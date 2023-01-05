@@ -1,0 +1,358 @@
+{
+	"info": {
+		"_postman_id": "6f4e1667-565c-4c92-92fc-1498b8e311f0",
+		"name": "Simple app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2643413"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"ddtardian@gmail.com\",\n    \"password\": \"admin1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"ddtardian@gmail.com\",\n    \"password\": \"admin1\",\n    \"phoneNumber\": \"081237123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reset Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"ddtardian@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/reset-password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"reset-password"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User Management",
+			"item": [
+				{
+					"name": "Get All User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1NWQyY2NlZC02ZDZhLTRlYTktYWNjOS1kNDJlODNkYzQ0ZjEiLCJlbWFpbCI6ImRkdGFyZGlhbkBnbWFpbC5jb20iLCJpYXQiOjE2NzI4NjIyNDMsImV4cCI6MTY3Mjg4MDI0M30.6I0D5fvThXtA0ufyUlp7SMoU47I8TsPzDThkzI5_Ylc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1NWQyY2NlZC02ZDZhLTRlYTktYWNjOS1kNDJlODNkYzQ0ZjEiLCJlbWFpbCI6ImRkdGFyZGlhbkBnbWFpbC5jb20iLCJpYXQiOjE2NzI4NjIyNDMsImV4cCI6MTY3Mjg4MDI0M30.6I0D5fvThXtA0ufyUlp7SMoU47I8TsPzDThkzI5_Ylc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "test@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "admin1",
+									"type": "text"
+								},
+								{
+									"key": "phoneNumber",
+									"value": "01823712836",
+									"type": "text"
+								},
+								{
+									"key": "firstName",
+									"value": "Tatang",
+									"type": "text"
+								},
+								{
+									"key": "lastName",
+									"value": "Herbal",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "bandung",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "male",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/home/dayuss/Pictures/Screenshots/Screenshot from 2023-01-02 16-02-21.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1NWQyY2NlZC02ZDZhLTRlYTktYWNjOS1kNDJlODNkYzQ0ZjEiLCJlbWFpbCI6ImRkdGFyZGlhbkBnbWFpbC5jb20iLCJpYXQiOjE2NzI4NjIyNDMsImV4cCI6MTY3Mjg4MDI0M30.6I0D5fvThXtA0ufyUlp7SMoU47I8TsPzDThkzI5_Ylc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "test@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "admin1",
+									"type": "text"
+								},
+								{
+									"key": "phoneNumber",
+									"value": "01823712836",
+									"type": "text"
+								},
+								{
+									"key": "firstName",
+									"value": "Tatang",
+									"type": "text"
+								},
+								{
+									"key": "lastName",
+									"value": "Herbal",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "bandung",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "male",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/home/dayuss/Pictures/Screenshots/Screenshot from 2023-01-02 16-02-21.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1NWQyY2NlZC02ZDZhLTRlYTktYWNjOS1kNDJlODNkYzQ0ZjEiLCJlbWFpbCI6ImRkdGFyZGlhbkBnbWFpbC5jb20iLCJpYXQiOjE2NzI4NjIyNDMsImV4cCI6MTY3Mjg4MDI0M30.6I0D5fvThXtA0ufyUlp7SMoU47I8TsPzDThkzI5_Ylc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "test@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "admin1",
+									"type": "text"
+								},
+								{
+									"key": "phoneNumber",
+									"value": "01823712836",
+									"type": "text"
+								},
+								{
+									"key": "firstName",
+									"value": "Tatang",
+									"type": "text"
+								},
+								{
+									"key": "lastName",
+									"value": "Herbal",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "bandung",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "male",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/home/dayuss/Pictures/Screenshots/Screenshot from 2023-01-02 16-02-21.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/users/55d2cced-6d6a-4ea9-acc9-d42e83dc44f1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"55d2cced-6d6a-4ea9-acc9-d42e83dc44f1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
